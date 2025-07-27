@@ -1,0 +1,119 @@
+name: Build and Deploy Wakacje.pl
+
+# Kiedy uruchomić workflow
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Uprawnienia
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Zadania
+jobs:
+  # Job 1: Build strony
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout kodu
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Zainstaluj pnpm
+      run: npm install -g pnpm
+      
+    - name: Zainstaluj zależności
+      run: pnpm install
+      
+    - name: Zbuduj stronę
+      run: pnpm run build
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: dist/
+
+  # Job 2: Deploy na GitHub Pages (opcjonalny)
+  deploy-pages:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist/
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload to Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: dist/
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+  # Job 3: Deploy na własny serwer przez FTP (opcjonalny)
+  deploy-ftp:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist/
+        
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist/
+        server-dir: /public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          
+  # Job 4: Powiadomienie o sukcesie (opcjonalny)
+  notify:
+    if: always()
+    needs: [build, deploy-pages, deploy-ftp]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Powiadomienie o sukcesie
+      if: ${{ needs.build.result == 'success' }}
+      run: |
+        echo "✅ Strona Wakacje.pl została pomyślnie zaktualizowana!"
+        echo "🌐 Sprawdź: https://twoja-domena.pl"
+        
+    - name: Powiadomienie o błędzie
+      if: ${{ needs.build.result == 'failure' }}
+      run: |
+        echo "❌ Błąd podczas budowania strony!"
+        echo "📧 Sprawdź logi i popraw błędy."
