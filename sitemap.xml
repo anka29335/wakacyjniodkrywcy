@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Strona główna -->
+  <url>
+    <loc>https://twoja-domena.pl/</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog - kategorie (dodaj gdy będziesz mieć podstrony) -->
+  <url>
+    <loc>https://twoja-domena.pl/blog</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://twoja-domena.pl/odkrywcy-tygodnia</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://twoja-domena.pl/ciekawostki</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://twoja-domena.pl/pamietnik-doradcy</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://twoja-domena.pl/poradniki</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Oferty -->
+  <url>
+    <loc>https://twoja-domena.pl/oferty</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- O nas -->
+  <url>
+    <loc>https://twoja-domena.pl/o-nas</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Kontakt -->
+  <url>
+    <loc>https://twoja-domena.pl/kontakt</loc>
+    <lastmod>2024-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
+
