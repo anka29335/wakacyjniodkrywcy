@@ -1,4 +1,4 @@
-name: Build and Deploy Wakacje.pl
+name: Build and Deploy wakacyjniodkrywcy
 
 # Kiedy uruchomić workflow
 on:
