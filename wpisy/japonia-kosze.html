@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dlaczego w Japonii nie ma koszy na śmieci? - Odkrywcy Wakacyjnego Świata</title>
+    <meta name="description" content="Fascynująca historia o tym, jak atak terrorystyczny z 1995 roku zmienił japońską kulturę i sprawił, że kosze na śmieci zniknęły z ulic japońskich miast.">
+    <meta name="keywords" content="Japonia, ciekawostki o Japonii, kultura japońska, kosze na śmieci, atak terrorystyczny, Tokio, podróże do Japonii">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .mobile-padding {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (min-width: 640px) {
+            .mobile-padding {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .mobile-padding {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Menu nawigacyjne -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo i lokalizacja -->
+                <div class="flex flex-col">
+                    <a href="../index.html" class="flex items-center space-x-2 mb-1">
+                        <span class="text-2xl font-bold text-blue-900">Odkrywcy</span>
+                        <span class="text-2xl font-bold text-yellow-500">Wakacyjnego Świata</span>
+                    </a>
+                    <div class="text-xs text-gray-500">
+                        📍 Grodzisk Mazowiecki, ul. Żyrardowska 31
+                    </div>
+                </div>
+
+                <!-- Menu główne -->
+                <div class="hidden lg:block">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="../index.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Strona główna</a>
+                        <a href="../oferty.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Oferty</a>
+                        <a href="../blog.html" class="text-blue-900 bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="../poradniki.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Poradniki</a>
+                        <a href="../odkrywca-tygodnia.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Odkrywcy</a>
+                        <a href="../o-nas.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">O nas</a>
+                        <a href="../kontakt.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontakt</a>
+                    </div>
+                </div>
+
+                <!-- Telefon i CTA -->
+                <div class="flex flex-col items-end">
+                    <a href="tel:518337064" class="flex items-center text-blue-900 font-bold text-lg mb-1">
+                        📞 518 337 064
+                    </a>
+                    <a href="../kontakt.html" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
+                        Wpadnij na kawę!
+                    </a>
+                </div>
+
+                <!-- Menu mobilne button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-900 focus:outline-none focus:text-blue-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu mobilne -->
+        <div id="mobile-menu" class="lg:hidden fixed inset-0 z-50 hidden">
+            <div class="fixed inset-0 bg-black bg-opacity-50" id="mobile-menu-overlay"></div>
+            <div class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu-panel">
+                <div class="p-4">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex flex-col">
+                            <span class="text-lg font-bold text-blue-900">Odkrywcy</span>
+                            <span class="text-lg font-bold text-yellow-500">Wakacyjnego Świata</span>
+                        </div>
+                        <button id="mobile-menu-close" class="text-gray-500 hover:text-gray-700">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="../index.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Strona główna</a>
+                        <a href="../oferty.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Oferty</a>
+                        <a href="../blog.html" class="block text-blue-900 bg-blue-50 py-2 px-3 rounded transition-colors">Blog</a>
+                        <a href="../poradniki.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Poradniki</a>
+                        <a href="../odkrywca-tygodnia.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Odkrywcy</a>
+                        <a href="../o-nas.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">O nas</a>
+                        <a href="../kontakt.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Kontakt</a>
+                    </nav>
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <a href="tel:518337064" class="flex items-center text-blue-900 font-bold text-lg mb-3">
+                            📞 518 337 064
+                        </a>
+                        <a href="../kontakt.html" class="block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 py-3 rounded-lg font-semibold transition-colors text-center">
+                            Wpadnij na kawę!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="bg-white py-4 border-b">
+        <div class="max-w-4xl mx-auto mobile-padding">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="../index.html" class="text-gray-700 hover:text-blue-900 text-sm">Strona główna</a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <span class="text-gray-400 mx-2">/</span>
+                            <a href="../blog.html" class="text-gray-700 hover:text-blue-900 text-sm">Blog</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <span class="text-gray-400 mx-2">/</span>
+                            <span class="text-gray-500 text-sm">Dlaczego w Japonii nie ma koszy na śmieci?</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Artykuł -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto mobile-padding">
+            <!-- Header artykułu -->
+            <header class="mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Ciekawostka</span>
+                    <span class="ml-3 text-gray-500 text-sm">12 lutego 2024</span>
+                    <span class="ml-auto text-gray-500 text-sm">⏱️ 4 min czytania</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Dlaczego w Japonii nie ma koszy na śmieci?
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Fascynująca historia o tym, jak tragiczny atak terrorystyczny z 1995 roku zmienił japońską kulturę 
+                    i sprawił, że kosze na śmieci zniknęły z ulic japońskich miast.
+                </p>
+            </header>
+
+            <!-- Zdjęcie główne -->
+            <div class="mb-8">
+                <div class="h-64 md:h-96 bg-gradient-to-r from-red-400 to-pink-500 rounded-xl flex items-center justify-center">
+                    <span class="text-8xl">🗾</span>
+                </div>
+                <p class="text-sm text-gray-500 mt-2 text-center">Ulice Tokio - czyste mimo braku koszy na śmieci</p>
+            </div>
+
+            <!-- Treść artykułu -->
+            <div class="prose prose-lg max-w-none">
+                <p class="text-lg leading-relaxed mb-6">
+                    Jeśli kiedykolwiek byłeś w Japonii, na pewno zauważyłeś coś dziwnego - <strong>praktycznie nie ma tam koszy na śmieci</strong>. 
+                    A mimo to ulice są krystalicznie czyste. Jak to możliwe? Historia za tym stojąca jest zarówno tragiczna, jak i fascynująca.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">20 marca 1995 - dzień, który zmienił wszystko</h2>
+                
+                <p class="mb-6">
+                    Tego dnia członkowie sekty Aum Shinrikyō przeprowadzili atak terrorystyczny w tokijskim metrze, 
+                    używając gazu sarin. Śmiertelny gaz został umieszczony w workach i pozostawiony w pociągach metra. 
+                    Zginęło 14 osób, a tysiące zostało rannych.
+                </p>
+
+                <p class="mb-6">
+                    Po tym tragicznym wydarzeniu władze japońskie podjęły drastyczne środki bezpieczeństwa. 
+                    Jednym z nich było <strong>usunięcie większości koszy na śmieci z przestrzeni publicznej</strong>, 
+                    aby uniemożliwić ukrycie w nich niebezpiecznych substancji.
+                </p>
+
+                <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-gray-700 bg-blue-50 py-4 rounded-r-lg">
+                    "Kosze na śmieci stały się potencjalnym zagrożeniem bezpieczeństwa. 
+                    Decyzja o ich usunięciu była trudna, ale konieczna." - rzecznik rządu japońskiego, 1995
+                </blockquote>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Jak Japończycy radzą sobie bez koszy?</h2>
+
+                <p class="mb-6">
+                    Mogłoby się wydawać, że brak koszy na śmieci doprowadzi do chaosu i brudu. 
+                    Tymczasem Japonia pozostaje jednym z najczystszych krajów świata. Jak to możliwe?
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">1. Kultura "mottainai"</h3>
+                <p class="mb-6">
+                    Japończycy od wieków wyznają filozofię "mottainai" - żalu z powodu marnotrawstwa. 
+                    Oznacza to minimalizowanie ilości śmieci już u źródła. Ludzie kupują tylko to, czego potrzebują, 
+                    i starają się nie produkować niepotrzebnych odpadów.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">2. Zabieranie śmieci do domu</h3>
+                <p class="mb-6">
+                    Japończycy mają w zwyczaju zabieranie swoich śmieci do domu. To nie jest uciążliwość, 
+                    ale naturalna część kultury. Każdy nosi ze sobą małą torebkę na śmieci.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">3. Skomplikowany system segregacji</h3>
+                <p class="mb-6">
+                    W Japonii obowiązuje jeden z najbardziej skomplikowanych systemów segregacji śmieci na świecie. 
+                    W niektórych miastach śmieci dzieli się na nawet 44 kategorie! To wymaga planowania i świadomości.
+                </p>
+
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-8">
+                    <h3 class="text-lg font-semibold text-yellow-800 mb-3">💡 Ciekawostka dla podróżnych</h3>
+                    <p class="text-yellow-700">
+                        Jeśli planujesz podróż do Japonii, pamiętaj o zabraniu małej torebki na śmieci! 
+                        To nie tylko praktyczne, ale też pokazuje szacunek dla lokalnej kultury.
+                    </p>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Gdzie można znaleźć kosze w Japonii?</h2>
+
+                <p class="mb-6">
+                    Choć kosze są rzadkością, można je znaleźć w kilku miejscach:
+                </p>
+
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Sklepy convenience stores</strong> - zawsze mają kosze przy wejściu</li>
+                    <li><strong>Stacje kolejowe</strong> - na peronach, ale często pilnowane</li>
+                    <li><strong>Parki</strong> - w wyznaczonych miejscach</li>
+                    <li><strong>Automaty vendingowe</strong> - często mają małe kosze na puszki</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Lekcja dla świata</h2>
+
+                <p class="mb-6">
+                    Historia japońskich koszy na śmieci to fascynujący przykład tego, jak tragedia może prowadzić 
+                    do pozytywnych zmian społecznych. Japończycy nie tylko przystosowali się do nowej rzeczywistości, 
+                    ale stworzyli jeszcze czystsze i bardziej świadome społeczeństwo.
+                </p>
+
+                <p class="mb-6">
+                    To pokazuje, że <strong>kultura i edukacja są potężniejsze niż infrastruktura</strong>. 
+                    Nie potrzeba koszy na każdym rogu, jeśli ludzie są odpowiedzialni i świadomi.
+                </p>
+
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6 my-8">
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">🌍 Inspiracja dla podróżników</h3>
+                    <p class="text-green-700 mb-3">
+                        Japońska kultura czystości i odpowiedzialności to coś, czego możemy się nauczyć 
+                        jako podróżnicy. Szanujmy miejsca, które odwiedzamy!
+                    </p>
+                    <a href="../oferty.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Zobacz oferty do Japonii
+                    </a>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Praktyczne wskazówki dla turystów</h2>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 my-8">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">📝 Pamiętaj podczas wizyty w Japonii:</h3>
+                    <ul class="text-blue-700 space-y-2">
+                        <li>• Zawsze noś ze sobą małą torebkę na śmieci</li>
+                        <li>• Kup jedzenie w convenience store - tam są kosze</li>
+                        <li>• Nie jedz podczas chodzenia po ulicy</li>
+                        <li>• Segreguj śmieci zgodnie z lokalnymi zasadami</li>
+                        <li>• Szanuj lokalną kulturę czystości</li>
+                    </ul>
+                </div>
+
+                <p class="mb-6">
+                    Historia japońskich koszy na śmieci to przypomnienie, że każda kultura ma swoje unikalne rozwiązania 
+                    na codzienne problemy. Jako podróżnicy mamy przywilej poznawania tych różnic i uczenia się od nich.
+                </p>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 my-8">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">🗾 Marzy Ci się podróż do Japonii?</h3>
+                    <p class="text-blue-700 mb-3">
+                        Japonia to kraj pełen fascynujących kontrastów i unikalnej kultury. 
+                        Pomożemy Ci zaplanować niezapomnianą podróż do Kraju Kwitnącej Wiśni!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="tel:518337064" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center">
+                            📞 Zadzwoń: 518 337 064
+                        </a>
+                        <a href="../kontakt.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-colors text-center">
+                            ☕ Wpadnij na kawę!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autor i data -->
+            <footer class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        K
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-semibold text-gray-900">Krzysztof Wiśniewski</p>
+                        <p class="text-gray-600 text-sm">Specjalista ds. Azji | Odkrywcy Wakacyjnego Świata</p>
+                        <p class="text-gray-500 text-sm">Opublikowano: 12 lutego 2024</p>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Nawigacja do innych artykułów -->
+            <nav class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex justify-between items-center">
+                    <a href="ania-grecja.html" class="flex items-center text-blue-900 hover:text-blue-700 font-semibold">
+                        ← Poprzedni artykuł
+                    </a>
+                    <a href="../blog.html" class="flex items-center text-blue-900 hover:text-blue-700 font-semibold">
+                        Powrót do bloga
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Logo i opis -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-xl font-bold text-blue-400">Odkrywcy</span>
+                        <span class="text-xl font-bold text-yellow-400">Wakacyjnego Świata</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Nie jesteśmy katalogiem - jesteśmy przewodnikami po świecie marzeń. 
+                        15 lat doświadczenia w sercu Grodziska Mazowieckiego.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">📘</a>
+                        <a href="#" class="text-gray-400 hover:text-white">📷</a>
+                    </div>
+                </div>
+
+                <!-- Szybkie linki -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Odkrywaj z nami</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../oferty.html" class="text-gray-300 hover:text-white">Aktualne oferty</a></li>
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-white">Blog podróżniczy</a></li>
+                        <li><a href="../poradniki.html" class="text-gray-300 hover:text-white">Poradniki</a></li>
+                        <li><a href="../odkrywca-tygodnia.html" class="text-gray-300 hover:text-white">Odkrywcy tygodnia</a></li>
+                        <li><a href="../pamietnik-doradcy.html" class="text-gray-300 hover:text-white">Pamiętnik doradcy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontakt -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="mr-2">📍</span>
+                            <span class="text-gray-300">ul. Żyrardowska 31<br>Grodzisk Mazowiecki</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">📞</span>
+                            <a href="tel:518337064" class="text-gray-300 hover:text-white">518 337 064</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2">✉️</span>
+                            <a href="mailto:biuro@odkrywcywakacyjnegoswiata.pl" class="text-gray-300 hover:text-white break-all">biuro@odkrywcywakacyjnegoswiata.pl</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Godziny otwarcia -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Godziny otwarcia</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Poniedziałek - Piątek: 9:00 - 18:00</li>
+                        <li>Sobota: 10:00 - 14:00</li>
+                        <li>Niedziela: zamknięte</li>
+                        <li class="text-yellow-400 font-semibold">☕ Kawa zawsze gotowa!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Odkrywcy Wakacyjnego Świata - Grodzisk Mazowiecki. Wszystkie prawa zastrzeżone.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobilne
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuPanel.classList.remove('-translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.add('-translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+
+        // Zamknij menu po kliknięciu w link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu-panel a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+</body>
+</html>
+
