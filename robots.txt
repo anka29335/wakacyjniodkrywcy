@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap (zaktualizuj URL na swoją domenę)
+Sitemap: https://twoja-domena.pl/sitemap.xml
+
+# Blokuj dostęp do plików konfiguracyjnych
+Disallow: /src/
+Disallow: /package.json
+Disallow: /vite.config.js
+Disallow: /.htaccess
+
+# Pozwól na indeksowanie głównych sekcji
+Allow: /
+Allow: /assets/
+
