@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poradniki Podróżnicze - Odkrywcy Wakacyjnego Świata | Grodzisk Mazowiecki Mazowiecki</title>
+    <meta name="description" content="Praktyczne poradniki podróżnicze dla mieszkańców Grodziska. Pakowanie, dokumenty, ubezpieczenia, bezpieczeństwo w podróży. Sprawdzone porady ekspertów.">
+    <meta name="keywords" content="poradniki podróżnicze, pakowanie na wakacje, dokumenty podróżne, ubezpieczenie turystyczne, biuro podróży Grodzisk Mazowiecki">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Menu nawigacyjne -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-2xl font-bold text-blue-900">Wakacje.</span>
+                        <span class="text-2xl font-bold text-yellow-500">pl</span>
+                    </a>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Strona główna</a>
+                        <a href="oferty.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Oferty</a>
+                        <a href="blog.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="poradniki.html" class="text-blue-900 bg-blue-50 px-3 py-2 rounded-md text-sm font-medium">Poradniki</a>
+                        <a href="odkrywca-tygodnia.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Odkrywcy</a>
+                        <a href="o-nas.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">O nas</a>
+                        <a href="kontakt.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontakt</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:518337064" class="flex items-center text-blue-900 font-semibold">📞 518 337 064</a>
+                    <a href="kontakt.html" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors">Wpadnij na kawę!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Praktyczne <span class="text-yellow-400">Poradniki</span>
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Sprawdzone porady i wskazówki od ekspertów z 15-letnim doświadczeniem. 
+                Wszystko, co musisz wiedzieć przed podróżą!
+            </p>
+        </div>
+    </section>
+
+    <!-- Główne poradniki -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Poradnik 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                        <span class="text-6xl">🎒</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Co zabrać na wakacje?</h3>
+                        <p class="text-gray-600 mb-4">Kompletna lista rzeczy do spakowania na różne typy wyjazdów. Sprawdzona przez setki naszych Odkrywców!</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>✓ Lista dla wakacji nad morzem</li>
+                            <li>✓ Pakowanie na góry</li>
+                            <li>✓ Podróże z dziećmi</li>
+                            <li>✓ Wyjazdy zimowe</li>
+                        </ul>
+                        <a href="#pakowanie" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors block text-center">
+                            Sprawdź listę
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Poradnik 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                        <span class="text-6xl">📋</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Dokumenty i formalności</h3>
+                        <p class="text-gray-600 mb-4">Wszystko o paszportach, wizach i dokumentach potrzebnych w podróży. Bez stresu i niespodzianek!</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>✓ Wymagania wizowe</li>
+                            <li>✓ Ważność paszportu</li>
+                            <li>✓ Dokumenty dla dzieci</li>
+                            <li>✓ Szczepienia obowiązkowe</li>
+                        </ul>
+                        <a href="#dokumenty" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors block text-center">
+                            Sprawdź wymagania
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Poradnik 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <span class="text-6xl">🛡️</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ubezpieczenia turystyczne</h3>
+                        <p class="text-gray-600 mb-4">Jak wybrać odpowiednie ubezpieczenie? Prawdziwe historie i praktyczne porady od naszych ekspertów.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>✓ Rodzaje ubezpieczeń</li>
+                            <li>✓ Suma ubezpieczenia</li>
+                            <li>✓ Sporty ekstremalne</li>
+                            <li>✓ Choroby przewlekłe</li>
+                        </ul>
+                        <a href="#ubezpieczenia" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 px-4 rounded-lg font-semibold transition-colors block text-center">
+                            Wybierz ubezpieczenie
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Szczegółowy poradnik pakowania -->
+    <section id="pakowanie" class="py-16 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🎒 Kompletna lista pakowania</h2>
+                <p class="text-lg text-gray-600">Sprawdzona przez ponad 1000 Wakacyjnych Odkrywców z Grodziska</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">🏖️ Wakacje nad morzem</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Strój kąpielowy (2 sztuki)</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Krem z filtrem SPF 50+</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kapelusz/czapka z daszkiem</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Okulary przeciwsłoneczne</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Ręcznik plażowy</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Japonki/sandały</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Lekkie ubrania z lnu/bawełny</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Coś ciepłego na wieczór</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">🏔️ Wyjazdy w góry</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Buty trekkingowe</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kurtka przeciwdeszczowa</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Plecak na jednodniowe wycieczki</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Ciepła bluza/polar</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Czapka i rękawiczki</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kijki trekkingowe</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Termos na gorące napoje</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Apteczka pierwszej pomocy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-4 bg-yellow-50 rounded-lg">
+                    <h4 class="font-bold text-gray-900 mb-2">💡 Rada od Wakacyjnych Odkrywców:</h4>
+                    <p class="text-gray-700">
+                        "Zawsze pakuj o 20% mniej niż myślisz, że potrzebujesz. Zostaw miejsce na pamiątki! 
+                        A najważniejsze rzeczy (leki, dokumenty, jedna zmiana ubrań) zawsze w bagażu podręcznym."
+                    </p>
+                    <p class="text-sm text-gray-600 mt-2">- Anna, doradca z 10-letnim doświadczeniem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Masz pytania o przygotowania do podróży?</h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Nasz zespół ekspertów chętnie pomoże Ci przygotować się do wymarzonej podróży. 
+                Wpadnij na kawę i porozmawiajmy!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kontakt.html" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Umów konsultację
+                </a>
+                <a href="tel:518337064" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Zadzwoń: 518 337 064
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class="bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl font-bold">Wakacje.</span>
+                        <span class="text-2xl font-bold text-yellow-400">pl</span>
+                    </div>
+                    <p class="text-blue-100 text-sm">Twoi przewodnicy po świecie marzeń w sercu Grodziska Mazowieckiego</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <div class="space-y-2 text-sm text-blue-200">
+                        <p>📍 ul. Żyrardowska 31, Grodzisk Mazowiecki</p>
+                        <p>📞 <a href="tel:518337064" class="hover:text-white">518 337 064</a></p>
+                        <p>📧 <a href="mailto:grodzisk@wakacje.pl" class="hover:text-white">grodzisk@wakacje.pl</a></p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Godziny otwarcia</h3>
+                    <div class="space-y-1 text-sm text-blue-200">
+                        <p>Pon-Pt: <span class="text-yellow-400">10:00-20:00</span></p>
+                        <p>Sobota: <span class="text-yellow-400">10:00-16:00</span></p>
+                        <p>Niedziela: Zamknięte</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/wakacje.plgrodziskmazowiecki" class="text-blue-200 hover:text-white">Facebook</a>
+                        <a href="https://instagram.com/wakacyjniodkrywcy" class="text-blue-200 hover:text-white">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm text-blue-200">
+                © 2024 Odkrywcy Wakacyjnego Świata - Grodzisk Mazowiecki Mazowiecki
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
