@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odkrywcy Wakacyjnego Świata - Biuro Podróży Grodzisk Mazowiecki</title>
+    <meta name="description" content="Odkrywcy Wakacyjnego Świata - biuro podróży w Grodzisku Mazowieckim z 15-letnim doświadczeniem. ul. Żyrardowska 31, tel. 518 337 064.">
+    <meta name="keywords" content="biuro podróży Grodzisk Mazowiecki, Odkrywcy Wakacyjnego Świata, last minute Grodzisk, wakacje z dziećmi, wakacje Grodzisk">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        .animate-pulse-slow {
+            animation: pulse 4s infinite;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Better mobile spacing */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+            .mobile-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Menu nawigacyjne -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo i lokalizacja -->
+                <div class="flex flex-col">
+                    <a href="index.html" class="flex items-center space-x-1 md:space-x-2 mb-1">
+                        <span class="text-lg md:text-2xl font-bold text-blue-900">Odkrywcy</span>
+                        <span class="text-lg md:text-2xl font-bold text-yellow-500">Wakacyjnego Świata</span>
+                    </a>
+                    <div class="text-xs text-gray-500 hidden sm:block">
+                        📍 Grodzisk Mazowiecki, ul. Żyrardowska 31
+                    </div>
+                </div>
+
+                <!-- Menu główne - desktop -->
+                <div class="hidden lg:block">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="index.html" class="text-blue-900 bg-blue-50 px-3 py-2 rounded-md text-sm font-medium">Strona główna</a>
+                        <a href="oferty.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Oferty</a>
+                        <a href="blog.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="poradniki.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Poradniki</a>
+                        <a href="odkrywca-tygodnia.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Odkrywcy</a>
+                        <a href="o-nas.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">O nas</a>
+                        <a href="kontakt.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontakt</a>
+                    </div>
+                </div>
+
+                <!-- Telefon i CTA - desktop -->
+                <div class="hidden md:flex flex-col items-end">
+                    <a href="tel:518337064" class="flex items-center text-blue-900 font-bold text-lg mb-1">
+                        📞 518 337 064
+                    </a>
+                    <a href="kontakt.html" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
+                        Wpadnij na kawę!
+                    </a>
+                </div>
+
+                <!-- Mobile phone button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <a href="tel:518337064" class="bg-blue-900 text-white p-2 rounded-lg">
+                        📞
+                    </a>
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-900 focus:outline-none focus:text-blue-900 p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 lg:hidden">
+            <div class="flex items-center justify-between p-4 border-b">
+                <span class="text-lg font-bold text-blue-900">Menu</span>
+                <button id="close-mobile-menu" class="text-gray-500 hover:text-gray-700">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mt-4">
+                <a href="index.html" class="block px-4 py-3 text-blue-900 bg-blue-50 border-r-4 border-blue-900 font-medium">Strona główna</a>
+                <a href="oferty.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition-colors">Oferty</a>
+                <a href="blog.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition-colors">Blog</a>
+                <a href="poradniki.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition-colors">Poradniki</a>
+                <a href="odkrywca-tygodnia.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition-colors">Odkrywcy</a>
+                <a href="o-nas.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition-colors">O nas</a>
+                <a href="kontakt.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-900 transition-colors">Kontakt</a>
+            </nav>
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t bg-gray-50">
+                <a href="tel:518337064" class="block w-full bg-blue-900 text-white text-center py-3 rounded-lg font-semibold mb-2">
+                    📞 518 337 064
+                </a>
+                <a href="kontakt.html" class="block w-full bg-yellow-500 text-blue-900 text-center py-3 rounded-lg font-semibold">
+                    Wpadnij na kawę!
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-12 md:py-20 gradient-bg text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="hero-title text-3xl md:text-6xl font-bold mb-4 md:mb-6">
+                    Gdzie zabierze Cię 
+                    <span class="text-yellow-400">następna podróż?</span>
+                </h1>
+                <p class="hero-subtitle text-lg md:text-2xl mb-6 md:mb-8 text-blue-100">
+                    Nie jesteśmy katalogiem - jesteśmy przewodnikami po świecie marzeń
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+                    <a href="kontakt.html" class="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-semibold px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-lg transition-colors text-center">
+                        ❤️ Opowiedz nam o swoich marzeniach
+                    </a>
+                    <a href="tel:518337064" class="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-lg font-semibold transition-colors text-center">
+                        📞 Zadzwoń: 518 337 064
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statystyki -->
+    <section class="py-8 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="text-center">
+                    <div class="text-2xl md:text-4xl font-bold text-blue-900 mb-2">1,247</div>
+                    <div class="text-sm md:text-base text-gray-600">Szczęśliwych odkrywców z Grodziska</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl md:text-4xl font-bold text-blue-900 mb-2">15</div>
+                    <div class="text-sm md:text-base text-gray-600">Lat doświadczenia</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl md:text-4xl font-bold text-blue-900 mb-2">98%</div>
+                    <div class="text-sm md:text-base text-gray-600">Zadowolonych klientów</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl md:text-4xl font-bold text-blue-900 mb-2">67</div>
+                    <div class="text-sm md:text-base text-gray-600">Krajów w ofercie</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Najnowsze historie -->
+    <section class="py-8 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-900 mb-4">Najnowsze historie naszych odkrywców</h2>
+                <p class="text-base md:text-xl text-gray-600">Poznaj prawdziwe historie mieszkańców Grodziska, którzy spełnili swoje marzenia</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Historia 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-6xl">🏝️</span>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Anna z ul. Parkowej</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-4">
+                            "Zawsze marzyłam o Malediwach, ale myślałam, że to poza moim zasięgiem. 
+                            Odkrywcy pomogli mi znaleźć idealną ofertę!"
+                        </p>
+                        <div class="flex items-center text-xs md:text-sm text-blue-600">
+                            <span class="mr-2">🌴</span>
+                            <span>Malediwy • Grudzień 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historia 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                        <span class="text-6xl">👨‍👩‍👧‍👦</span>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Rodzina Kowalskich</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-4">
+                            "Pierwsze wakacje z trójką dzieci. Baliśmy się organizacji, ale wszystko było perfekcyjnie zaplanowane!"
+                        </p>
+                        <div class="flex items-center text-xs md:text-sm text-blue-600">
+                            <span class="mr-2">🏖️</span>
+                            <span>Grecja • Sierpień 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historia 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover md:col-span-2 lg:col-span-1">
+                    <div class="h-48 bg-gradient-to-r from-orange-500 to-red-600 flex items-center justify-center">
+                        <span class="text-6xl">🎒</span>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Marcin - podróż życia</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-4">
+                            "Solo trip do Japonii na 30. urodziny. Odkrywcy zorganizowali wszystko tak, 
+                            że czułem się bezpiecznie w obcym kraju."
+                        </p>
+                        <div class="flex items-center text-xs md:text-sm text-blue-600">
+                            <span class="mr-2">🗾</span>
+                            <span>Japonia • Październik 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="blog.html" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-6 md:px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Zobacz wszystkie historie
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ciekawostka dnia -->
+    <section class="py-8 md:py-16 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">🌍 Ciekawostka dnia</h2>
+                <div class="bg-blue-800 rounded-xl p-6 md:p-8 max-w-4xl mx-auto">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 text-yellow-400">Czy wiesz, że...</h3>
+                    <p class="text-base md:text-lg mb-6">
+                        Islandia ma więcej owiec niż mieszkańców? Na wyspie żyje około 800,000 owiec, 
+                        podczas gdy ludzi jest tylko 370,000! To idealne miejsce dla miłośników natury 
+                        i spokoju. 🐑
+                    </p>
+                    <a href="blog.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Więcej ciekawostek
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opinie klientów -->
+    <section class="py-8 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-900 mb-4">Co mówią nasi odkrywcy</h2>
+                <p class="text-base md:text-xl text-gray-600">Prawdziwe opinie mieszkańców Grodziska Mazowieckiego</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Opinia 1 -->
+                <div class="bg-white p-4 md:p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl">👩</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Katarzyna M.</h4>
+                            <p class="text-sm text-gray-600">ul. Słowackiego</p>
+                        </div>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-700 mb-4">
+                        "Profesjonalna obsługa, świetne ceny i mnóstwo cierpliwości do moich pytań. 
+                        Polecam każdemu z Grodziska!"
+                    </p>
+                    <div class="flex text-yellow-500">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <!-- Opinia 2 -->
+                <div class="bg-white p-4 md:p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl">👨</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Tomasz K.</h4>
+                            <p class="text-sm text-gray-600">ul. Żyrardowska</p>
+                        </div>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-700 mb-4">
+                        "Organizowali nam już 3 wyjazdy. Za każdym razem wszystko dopięte na ostatni guzik. 
+                        Można im zaufać!"
+                    </p>
+                    <div class="flex text-yellow-500">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <!-- Opinia 3 -->
+                <div class="bg-white p-4 md:p-6 rounded-xl shadow-lg md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-xl">👵</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Maria W.</h4>
+                            <p class="text-sm text-gray-600">ul. Kościelna</p>
+                        </div>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-700 mb-4">
+                        "W wieku 67 lat pierwszy raz poleciałam samolotem! Dzięki Odkrywcom poczułam się bezpiecznie 
+                        i wszystko było perfekcyjnie zorganizowane."
+                    </p>
+                    <div class="flex text-yellow-500">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="odkrywca-tygodnia.html" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-6 md:px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Zobacz więcej opinii
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dlaczego mieszkańcy Grodziska wybierają nas -->
+    <section class="py-8 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-900 mb-4">Dlaczego mieszkańcy Grodziska wybierają nas?</h2>
+                <p class="text-base md:text-xl text-gray-600">Jesteśmy Waszymi sąsiadami, którzy rozumieją Wasze potrzeby</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Powód 1 -->
+                <div class="text-center p-4 md:p-6">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl md:text-3xl">🏠</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3">Lokalni eksperci</h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        Mieszkamy w Grodzisku od lat. Znamy Wasze potrzeby, budżety i marzenia. 
+                        To nie jest dla nas tylko praca - to nasza pasja.
+                    </p>
+                </div>
+
+                <!-- Powód 2 -->
+                <div class="text-center p-4 md:p-6">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl md:text-3xl">☕</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3">Osobiste podejście</h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        Wpadnij na kawę, opowiedz o swoich marzeniach. Nie sprzedajemy katalogów - 
+                        tworzymy podróże szyte na miarę.
+                    </p>
+                </div>
+
+                <!-- Powód 3 -->
+                <div class="text-center p-4 md:p-6 md:col-span-2 lg:col-span-1">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl md:text-3xl">🤝</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3">Zaufanie i bezpieczeństwo</h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        15 lat na rynku, setki zadowolonych rodzin z Grodziska. 
+                        Jesteśmy ubezpieczeni i licencjonowani.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Przydatne dla Odkrywców -->
+    <section class="py-8 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold text-blue-900 mb-4">Przydatne dla Odkrywców Wakacyjnego Świata</h2>
+                <p class="text-base md:text-xl text-gray-600">Wszystko, czego potrzebujesz do planowania podróży</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <!-- Link 1 -->
+                <a href="oferty.html" class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="text-3xl md:text-4xl mb-3">🔥</div>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 mb-2">Aktualne oferty</h3>
+                    <p class="text-sm text-gray-600">Last minute i promocje</p>
+                </a>
+
+                <!-- Link 2 -->
+                <a href="poradniki.html" class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="text-3xl md:text-4xl mb-3">📚</div>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 mb-2">Poradniki</h3>
+                    <p class="text-sm text-gray-600">Praktyczne wskazówki</p>
+                </a>
+
+                <!-- Link 3 -->
+                <a href="blog.html" class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="text-3xl md:text-4xl mb-3">✈️</div>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 mb-2">Inspiracje</h3>
+                    <p class="text-sm text-gray-600">Pomysły na podróże</p>
+                </a>
+
+                <!-- Link 4 -->
+                <a href="kontakt.html" class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div class="text-3xl md:text-4xl mb-3">📞</div>
+                    <h3 class="text-base md:text-lg font-bold text-gray-900 mb-2">Kontakt</h3>
+                    <p class="text-sm text-gray-600">Porozmawiajmy!</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 md:py-16 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Gotowy na swoją przygodę?</h2>
+            <p class="text-base md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto text-blue-100">
+                Każdy Odkrywca ma inne marzenia. Wpadnij do nas na kawę, opowiedz o swoich planach, 
+                a my znajdziemy coś idealnego dla Ciebie.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+                <a href="kontakt.html" class="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-semibold px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-lg transition-colors">
+                    📍 Wpadnij na kawę do biura
+                </a>
+                <a href="tel:518337064" class="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-lg font-semibold transition-colors">
+                    📞 Zadzwoń: 518 337 064
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class="bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto mobile-padding px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                
+                <!-- Logo i opis -->
+                <div class="md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-xl md:text-2xl font-bold">Odkrywcy</span>
+                        <span class="text-xl md:text-2xl font-bold text-yellow-400">Wakacyjnego Świata</span>
+                    </div>
+                    <p class="text-blue-100 text-sm mb-4">
+                        Twoi przewodnicy po świecie marzeń w sercu Grodziska Mazowieckiego
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/odkrywcywakacyjnegoswiata" target="_blank" class="text-blue-200 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/wakacyjniodkrywcy" target="_blank" class="text-blue-200 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Szybkie linki -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Szybkie linki</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-blue-200 hover:text-white transition-colors">Strona główna</a></li>
+                        <li><a href="oferty.html" class="text-blue-200 hover:text-white transition-colors">Aktualne oferty</a></li>
+                        <li><a href="blog.html" class="text-blue-200 hover:text-white transition-colors">Blog podróżniczy</a></li>
+                        <li><a href="poradniki.html" class="text-blue-200 hover:text-white transition-colors">Poradniki</a></li>
+                        <li><a href="odkrywca-tygodnia.html" class="text-blue-200 hover:text-white transition-colors">Odkrywcy tygodnia</a></li>
+                        <li><a href="pamietnik-doradcy.html" class="text-blue-200 hover:text-white transition-colors">Pamiętnik doradcy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontakt -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <div class="space-y-2 text-sm text-blue-200">
+                        <div class="flex items-start">
+                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>ul. Żyrardowska 31<br>05-825 Grodzisk Mazowiecki</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <a href="tel:518337064" class="hover:text-white transition-colors">518 337 064</a>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <a href="mailto:biuro@odkrywcywakacyjnegoswiata.pl" class="hover:text-white transition-colors break-all">biuro@odkrywcywakacyjnegoswiata.pl</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Godziny otwarcia -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Godziny otwarcia</h3>
+                    <div class="space-y-1 text-sm text-blue-200">
+                        <div class="flex justify-between">
+                            <span>Pon - Pt:</span>
+                            <span class="text-yellow-400 font-semibold">10:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sobota:</span>
+                            <span class="text-yellow-400 font-semibold">10:00 - 16:00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Niedziela:</span>
+                            <span class="text-gray-400">Zamknięte</span>
+                        </div>
+                        <div class="mt-3 p-2 bg-yellow-500 text-yellow-900 rounded text-xs font-semibold">
+                            ☕ Kawa zawsze gotowa!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dolna sekcja -->
+            <div class="border-t border-blue-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                    <div class="text-sm text-blue-200 mb-4 md:mb-0">
+                        © 2024 Odkrywcy Wakacyjnego Świata - Grodzisk Mazowiecki. Wszystkie prawa zastrzeżone.
+                    </div>
+                    <div class="text-xs text-blue-300">
+                        Licencja organizatora turystyki nr 123/2024
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript dla menu mobilnego -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Zamknij menu po kliknięciu w link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+</body>
+</html>
+
