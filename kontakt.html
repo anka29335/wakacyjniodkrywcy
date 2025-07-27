@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Odkrywcy Wakacyjnego Świata | Grodzisk Mazowiecki Mazowiecki</title>
+    <meta name="description" content="Skontaktuj się z Wakacyjnymi Odkrywcami w Grodzisku Mazowieckim. Adres, telefon, godziny otwarcia, mapa dojazdu. Wpadnij na kawę i porozmawiajmy o Twoich marzeniach!">
+    <meta name="keywords" content="kontakt biuro podróży Grodzisk, Grodzisk Mazowiecki Mazowiecki, ul. Żyrardowska 31, telefon 518 337 064">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Menu nawigacyjne -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo i lokalizacja -->
+                <div class="flex flex-col">
+                    <a href="index.html" class="flex items-center space-x-2 mb-1">
+                        <span class="text-2xl font-bold text-blue-900">Odkrywcy</span>
+                        <span class="text-2xl font-bold text-yellow-500">Wakacyjnego Świata</span>
+                    </a>
+                    <div class="text-xs text-gray-500">
+                        📍 Grodzisk Mazowiecki, ul. Żyrardowska 31
+                    </div>
+                </div>
+
+                <!-- Menu główne -->
+                <div class="hidden lg:block">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Strona główna</a>
+                        <a href="oferty.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Oferty</a>
+                        <a href="blog.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="poradniki.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Poradniki</a>
+                        <a href="odkrywca-tygodnia.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Odkrywcy</a>
+                        <a href="o-nas.html" class="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">O nas</a>
+                        <a href="kontakt.html" class="text-blue-900 bg-blue-50 px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontakt</a>
+                    </div>
+                </div>
+
+                <!-- Telefon i CTA -->
+                <div class="flex flex-col items-end">
+                    <a href="tel:518337064" class="flex items-center text-blue-900 font-bold text-lg mb-1">
+                        📞 518 337 064
+                    </a>
+                    <a href="kontakt.html" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 py-2 rounded-lg font-semibold transition-colors text-sm">
+                        Wpadnij na kawę!
+                    </a>
+                </div>
+
+                <!-- Menu mobilne button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-900 focus:outline-none focus:text-blue-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu mobilne -->
+        <div id="mobile-menu" class="lg:hidden fixed inset-0 z-50 hidden">
+            <div class="fixed inset-0 bg-black bg-opacity-50" id="mobile-menu-overlay"></div>
+            <div class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu-panel">
+                <div class="p-4">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex flex-col">
+                            <span class="text-lg font-bold text-blue-900">Odkrywcy</span>
+                            <span class="text-lg font-bold text-yellow-500">Wakacyjnego Świata</span>
+                        </div>
+                        <button id="mobile-menu-close" class="text-gray-500 hover:text-gray-700">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Strona główna</a>
+                        <a href="oferty.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Oferty</a>
+                        <a href="blog.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Blog</a>
+                        <a href="poradniki.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Poradniki</a>
+                        <a href="odkrywca-tygodnia.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">Odkrywcy</a>
+                        <a href="o-nas.html" class="block text-gray-700 hover:text-blue-900 py-2 px-3 rounded transition-colors">O nas</a>
+                        <a href="kontakt.html" class="block text-blue-900 bg-blue-50 py-2 px-3 rounded transition-colors">Kontakt</a>
+                    </nav>
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <a href="tel:518337064" class="flex items-center text-blue-900 font-bold text-lg mb-3">
+                            📞 518 337 064
+                        </a>
+                        <a href="kontakt.html" class="block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 py-3 rounded-lg font-semibold transition-colors text-center">
+                            Wpadnij na kawę!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Menu mobilne
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuPanel.classList.remove('-translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.add('-translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+        }
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        }
+
+        // Zamknij menu po kliknięciu w link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu-panel a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Skontaktuj się z 
+                <span class="text-yellow-400">Wakacyjnymi Odkrywcami</span>
+            </h1>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Wpadnij na kawę do naszego biura w sercu Grodziska Mazowieckiego. 
+                Porozmawiajmy o Twoich marzeniach podróżniczych!
+            </p>
+        </div>
+    </section>
+
+    <!-- Informacje kontaktowe -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Adres i godziny -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">📍</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Adres biura</h3>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-lg font-semibold text-gray-900 mb-2">ul. Żyrardowska 31</p>
+                        <p class="text-gray-600 mb-4">05-825 Grodzisk Mazowiecki</p>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Jesteśmy w centrum Grodziska, blisko dworca PKP. 
+                            Parking dostępny na miejscu.
+                        </p>
+                        <a href="https://maps.google.com/?q=Żyrardowska+31+Grodzisk+Mazowiecki" target="_blank" 
+                           class="text-blue-900 hover:text-blue-700 font-semibold">
+                            Zobacz na mapie →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Telefon i email -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">📞</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Kontakt bezpośredni</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <p class="text-sm text-gray-600 mb-1">Telefon</p>
+                            <a href="tel:518337064" class="text-2xl font-bold text-blue-900 hover:text-blue-700">
+                                518 337 064
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-600 mb-1">Email</p>
+                            <a href="mailto:biuro@odkrywcywakacyjnegoswiata.pl" class="text-lg text-blue-900 hover:text-blue-700">
+                                biuro@odkrywcywakacyjnegoswiata.pl
+                            </a>
+                        </div>
+                        <div class="text-center pt-4">
+                            <p class="text-sm text-gray-600">
+                                Odpowiadamy na telefon i emaile w godzinach otwarcia biura. 
+                                W pilnych sprawach dzwońcie!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Godziny otwarcia -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">🕒</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Godziny otwarcia</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Poniedziałek - Piątek</span>
+                            <span class="font-semibold text-blue-900">10:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Sobota</span>
+                            <span class="font-semibold text-blue-900">10:00 - 16:00</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Niedziela</span>
+                            <span class="text-gray-500">Zamknięte</span>
+                        </div>
+                        <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
+                            <p class="text-sm text-center text-gray-700">
+                                ☕ <strong>Kawa zawsze gotowa!</strong><br>
+                                Wpadnij bez umówienia lub zadzwoń wcześniej
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formularz kontaktowy -->
+    <section id="formularz" class="py-16 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Napisz do nas</h2>
+                <p class="text-lg text-gray-600">
+                    Masz pytania o podróże? Chcesz wycenę? A może po prostu chcesz się przywitać? 
+                    Napisz do nas - odpowiemy w ciągu 24 godzin!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="imie" class="block text-sm font-medium text-gray-700 mb-2">Imię *</label>
+                            <input type="text" id="imie" name="imie" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="telefon" class="block text-sm font-medium text-gray-700 mb-2">Telefon *</label>
+                            <input type="tel" id="telefon" name="telefon" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label for="temat" class="block text-sm font-medium text-gray-700 mb-2">Temat</label>
+                        <select id="temat" name="temat" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Wybierz temat</option>
+                            <option value="wycena">Prośba o wycenę podróży</option>
+                            <option value="informacje">Pytania o destynację</option>
+                            <option value="rezerwacja">Chcę zarezerwować wyjazd</option>
+                            <option value="reklamacja">Reklamacja/problem</option>
+                            <option value="inne">Inne</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="wiadomosc" class="block text-sm font-medium text-gray-700 mb-2">Wiadomość *</label>
+                        <textarea id="wiadomosc" name="wiadomosc" rows="5" required 
+                                  placeholder="Opowiedz nam o swoich planach podróżniczych..."
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input type="checkbox" id="zgoda" name="zgoda" required 
+                               class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="zgoda" class="ml-3 text-sm text-gray-600">
+                            Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie. *
+                        </label>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" 
+                                class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Wyślij wiadomość
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa i dojazd -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Jak do nas dotrzeć?</h2>
+                <p class="text-lg text-gray-600">Jesteśmy w samym centrum Grodziska Mazowieckiego</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Mapa -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-64 bg-gradient-to-r from-blue-400 to-green-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <span class="text-6xl mb-4 block">🗺️</span>
+                            <p class="text-lg font-semibold">Mapa Google</p>
+                            <p class="text-sm">ul. Żyrardowska 31</p>
+                            <a href="https://maps.google.com/?q=Żyrardowska+31+Grodzisk+Mazowiecki" target="_blank" 
+                               class="inline-block mt-4 bg-white text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                Otwórz w Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instrukcje dojazdu -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Dojazd</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">🚗 Samochodem</h4>
+                            <p class="text-gray-600 text-sm">
+                                Parking dostępny bezpośrednio przy biurze. 
+                                Z Warszawy: S8 → zjazd Grodzisk Mazowiecki → centrum miasta.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">🚂 Pociągiem</h4>
+                            <p class="text-gray-600 text-sm">
+                                Dworzec PKP Grodzisk Mazowiecki → 5 minut pieszo do biura. 
+                                Bezpośrednie połączenia z Warszawy Centralnej.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">🚌 Autobusem</h4>
+                            <p class="text-gray-600 text-sm">
+                                Linie miejskie i podmiejskie. Przystanek "Centrum" → 2 minuty pieszo.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Wskazówka:</strong> Jesteśmy w budynku z niebieską witryną, 
+                                obok apteki. Szukaj naszego logo!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Gotowy na rozmowę o Twoich marzeniach?</h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Nie ma nic lepszego niż osobista rozmowa przy kawie. Wpadnij do nas, 
+                a my pomożemy Ci zaplanować wymarzoną podróż!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:518337064" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Zadzwoń: 518 337 064
+                </a>
+                <a href="mailto:biuro@odkrywcywakacyjnegoswiata.pl" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Napisz email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class="bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl font-bold">Wakacje.</span>
+                        <span class="text-2xl font-bold text-yellow-400">pl</span>
+                    </div>
+                    <p class="text-blue-100 text-sm">Twoi przewodnicy po świecie marzeń w sercu Grodziska Mazowieckiego</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <div class="space-y-2 text-sm text-blue-200">
+                        <p>📍 ul. Żyrardowska 31, Grodzisk Mazowiecki</p>
+                        <p>📞 <a href="tel:518337064" class="hover:text-white">518 337 064</a></p>
+                        <p>📧 <a href="mailto:biuro@odkrywcywakacyjnegoswiata.pl" class="hover:text-white">biuro@odkrywcywakacyjnegoswiata.pl</a></p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Godziny otwarcia</h3>
+                    <div class="space-y-1 text-sm text-blue-200">
+                        <p>Pon-Pt: <span class="text-yellow-400">10:00-20:00</span></p>
+                        <p>Sobota: <span class="text-yellow-400">10:00-16:00</span></p>
+                        <p>Niedziela: Zamknięte</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/odkrywcywakacyjnegoswiata" class="text-blue-200 hover:text-white">Facebook</a>
+                        <a href="https://instagram.com/wakacyjniodkrywcy" class="text-blue-200 hover:text-white">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm text-blue-200">
+                © 2024 Odkrywcy Wakacyjnego Świata - Grodzisk Mazowiecki Mazowiecki
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
